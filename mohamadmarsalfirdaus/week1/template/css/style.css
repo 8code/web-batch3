@@ -110,7 +110,11 @@ h5 {
 	position: absolute;
 	left: 50%;
 	top: 50%;
+<<<<<<< HEAD
 	background-image: url(https://marinamarques.pt/img/preloader.gif);
+=======
+	background-image: url(../img/curug.jpg);
+>>>>>>> cd8e54822a5c32c3e4dd8ddea33ee6028f73310d
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: -100px 0 0 -100px;
@@ -221,11 +225,11 @@ button.navbar-toggle.collapsed {
 }
 
 .navbar-collapse.collapse {
-	display: none!important;
+	display: none !important;
 }
 
 .navbar-nav {
-	float: none!important;
+	float: none !important;
 }
 
 .navbar-nav>li {
@@ -248,7 +252,7 @@ button.navbar-toggle.collapsed {
 	height: auto;
 	text-align: center;
 	color: white;
-	background: url(https://scontent.fcgk18-1.fna.fbcdn.net/v/t1.0-9/56314587_2765128530194196_1466563930938671104_n.jpg?_nc_cat=111&_nc_ht=scontent.fcgk18-1.fna&oh=c76041c868683928665262af3fe12a4c&oe=5D45BBDF) no-repeat top center scroll;
+	background: url(../img/curug.jpg) no-repeat top center scroll;
 	background-size: cover;
 	-o-background-size: cover;
 }
@@ -286,9 +290,11 @@ span.city {
 		height: 100%;
 		padding: 0;
 	}
+
 	.intro .intro-body .brand-heading {
 		font-size: 130px;
 	}
+
 	.intro .intro-body .intro-text {
 		font-size: 35px;
 	}
@@ -324,31 +330,37 @@ span.city {
 		opacity: 0;
 		-webkit-transform: scaleY(1) scaleX(1);
 	}
+
 	5% {
 		top: 8px;
 		opacity: 0.8;
 		-webkit-transform: scaleY(1.2) scaleX(1.2);
 	}
+
 	10% {
 		top: 8px;
 		opacity: 1;
 		-webkit-transform: scaleY(1.6) scaleX(1.6);
 	}
+
 	15% {
 		top: 8px;
 		opacity: 1;
 		-webkit-transform: scaleY(1.2) scaleX(1.2);
 	}
+
 	20% {
 		top: 8px;
 		opacity: 1;
 		-webkit-transform: scaleY(1.2) scaleX(1.2);
 	}
+
 	30% {
 		top: 15px;
 		opacity: 1;
 		-webkit-transform: scaleY(1.2) scaleX(1.2);
 	}
+
 	100% {
 		top: 30px;
 		opacity: 0;
@@ -885,15 +897,15 @@ div.button-weblink {
 .testimionals-bg {
 	width: 100%;
 	height: auto;
-	background: url(https://scontent.fcgk18-2.fna.fbcdn.net/v/t1.0-9/57227788_2789009824472733_7468396787087179776_n.jpg?_nc_cat=107&_nc_ht=scontent.fcgk18-2.fna&oh=cd124b20befbc9f2e070d894685603da&oe=5D4570C9) no-repeat top center scroll;
+	background: url(http://marinamarques.pt/img/mm_testimionals.jpg) no-repeat top center scroll;
 	background-size: cover;
 	-o-background-size: cover;
 }
 
 .testimionals-bg-opacity {
-    width: 100%;
-    height: auto;
-    background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: auto;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 .quotes {
@@ -956,7 +968,7 @@ footer a:visited footer a:focus {
 }
 
 #copyright {
-	margin-top: 5px;
+	margin-top: 35px;
 	font-size: 14px;
 }
 
@@ -971,16 +983,20 @@ footer a:visited footer a:focus {
 		font-size: 85px;
 		margin-top: 10%;
 	}
+
 	.col-exp {
 		margin-top: 15%;
 	}
+
 	.timeline .timeline-experience {
 		margin-left: 20px;
 		padding-left: 20px;
 	}
+
 	.timeline time {
 		width: 40px;
 	}
+
 	.services-item {
 		margin-bottom: 15%;
 	}
