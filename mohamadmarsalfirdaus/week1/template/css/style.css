@@ -110,7 +110,7 @@ h5 {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	background-image: url(img/curug.jpg);
+	background-image: url(../img/curug.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: -100px 0 0 -100px;
@@ -221,11 +221,11 @@ button.navbar-toggle.collapsed {
 }
 
 .navbar-collapse.collapse {
-	display: none!important;
+	display: none !important;
 }
 
 .navbar-nav {
-	float: none!important;
+	float: none !important;
 }
 
 .navbar-nav>li {
@@ -248,7 +248,7 @@ button.navbar-toggle.collapsed {
 	height: auto;
 	text-align: center;
 	color: white;
-	background: url(img/curug.jpg) no-repeat top center scroll;
+	background: url(../img/curug.jpg) no-repeat top center scroll;
 	background-size: cover;
 	-o-background-size: cover;
 }
@@ -286,9 +286,11 @@ span.city {
 		height: 100%;
 		padding: 0;
 	}
+
 	.intro .intro-body .brand-heading {
 		font-size: 130px;
 	}
+
 	.intro .intro-body .intro-text {
 		font-size: 35px;
 	}
@@ -324,31 +326,37 @@ span.city {
 		opacity: 0;
 		-webkit-transform: scaleY(1) scaleX(1);
 	}
+
 	5% {
 		top: 8px;
 		opacity: 0.8;
 		-webkit-transform: scaleY(1.2) scaleX(1.2);
 	}
+
 	10% {
 		top: 8px;
 		opacity: 1;
 		-webkit-transform: scaleY(1.6) scaleX(1.6);
 	}
+
 	15% {
 		top: 8px;
 		opacity: 1;
 		-webkit-transform: scaleY(1.2) scaleX(1.2);
 	}
+
 	20% {
 		top: 8px;
 		opacity: 1;
 		-webkit-transform: scaleY(1.2) scaleX(1.2);
 	}
+
 	30% {
 		top: 15px;
 		opacity: 1;
 		-webkit-transform: scaleY(1.2) scaleX(1.2);
 	}
+
 	100% {
 		top: 30px;
 		opacity: 0;
@@ -891,9 +899,9 @@ div.button-weblink {
 }
 
 .testimionals-bg-opacity {
-    width: 100%;
-    height: auto;
-    background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: auto;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 .quotes {
@@ -971,16 +979,20 @@ footer a:visited footer a:focus {
 		font-size: 85px;
 		margin-top: 10%;
 	}
+
 	.col-exp {
 		margin-top: 15%;
 	}
+
 	.timeline .timeline-experience {
 		margin-left: 20px;
 		padding-left: 20px;
 	}
+
 	.timeline time {
 		width: 40px;
 	}
+
 	.services-item {
 		margin-bottom: 15%;
 	}
