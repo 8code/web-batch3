@@ -1,7 +1,7 @@
 // PreLoader
 jQuery.noConflict();
-(function($) {
-	$(window).on('load', function() { // makes sure the whole site is loaded
+(function ($) {
+	$(window).on('load', function () { // makes sure the whole site is loaded
 		$('#status').fadeOut(); // will first fade out the loading animation
 		$('#preloader').delay(200).fadeOut('slow'); // will fade out the white DIV that covers the website.
 	});
@@ -9,15 +9,15 @@ jQuery.noConflict();
 
 // Scroll to Top
 jQuery.noConflict();
-(function($) {
-	$(window).scroll(function() {
+(function ($) {
+	$(window).scroll(function () {
 		if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
 			$('#return-to-top').fadeIn(200); // Fade in the arrow
 		} else {
 			$('#return-to-top').fadeOut(200); // Else fade out the arrow
 		}
 	});
-	$('#return-to-top').click(function() { // When arrow is clicked
+	$('#return-to-top').click(function () { // When arrow is clicked
 		$('body,html').animate({
 			scrollTop: 0 // Scroll to top of body
 		}, 500);
@@ -26,9 +26,9 @@ jQuery.noConflict();
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 jQuery.noConflict();
-(function($) {
-	$(function() {
-		$('a.page-scroll').bind('click', function(event) {
+(function ($) {
+	$(function () {
+		$('a.page-scroll').bind('click', function (event) {
 			var $anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $($anchor.attr('href')).offset().top
@@ -39,7 +39,7 @@ jQuery.noConflict();
 })(jQuery);
 
 // typer for hello
-window.onload = function() {
+window.onload = function () {
 	var elements = document.getElementsByClassName('txt-rotate');
 	for (var i = 0; i < elements.length; i++) {
 		var toRotate = elements[i].getAttribute('data-rotate');
@@ -55,7 +55,7 @@ window.onload = function() {
 	document.body.appendChild(css);
 };
 
-var TxtRotate = function(el, toRotate, period) {
+var TxtRotate = function (el, toRotate, period) {
 	this.toRotate = toRotate;
 	this.el = el;
 	this.loopNum = 0;
@@ -65,7 +65,7 @@ var TxtRotate = function(el, toRotate, period) {
 	this.isDeleting = false;
 };
 
-TxtRotate.prototype.tick = function() {
+TxtRotate.prototype.tick = function () {
 	var i = this.loopNum % this.toRotate.length;
 	var fullTxt = this.toRotate[i];
 
@@ -93,15 +93,15 @@ TxtRotate.prototype.tick = function() {
 		delta = 200;
 	}
 
-	setTimeout(function() {
+	setTimeout(function () {
 		that.tick();
 	}, delta);
 };
 
 // number count for stats
 jQuery.noConflict();
-(function($) {
-	$('.counter').each(function() {
+(function ($) {
+	$('.counter').each(function () {
 		var $this = $(this),
 			countTo = $this.attr('data-count');
 
@@ -114,10 +114,10 @@ jQuery.noConflict();
 			{
 				duration: 3000,
 				easing: 'linear',
-				step: function() {
+				step: function () {
 					$this.text(Math.floor(this.countNum));
 				},
-				complete: function() {
+				complete: function () {
 					$this.text(this.countNum);
 					//alert('finished');
 				}
@@ -131,4 +131,4 @@ var today = new Date();
 var year = today.getFullYear();
 
 var copyright = document.getElementById("copyright");
-copyright.innerHTML = '© Marina Marques '+ year;
+copyright.innerHTML = '© abimarsalCoder' + year;
