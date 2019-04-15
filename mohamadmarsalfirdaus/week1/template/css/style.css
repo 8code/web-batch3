@@ -110,11 +110,7 @@ h5 {
 	position: absolute;
 	left: 50%;
 	top: 50%;
-<<<<<<< HEAD
-	background-image: url(https://marinamarques.pt/img/preloader.gif);
-=======
-	background-image: url(../img/curug.jpg);
->>>>>>> cd8e54822a5c32c3e4dd8ddea33ee6028f73310d
+	background-image: url(img/me.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: -100px 0 0 -100px;
@@ -877,8 +873,6 @@ div.button-weblink {
 /*/ end services /*/
 
 
-/*/ start testimionals /*/
-
 #testimionals {
 	margin-top: 20px;
 	width: 100%;
@@ -897,15 +891,15 @@ div.button-weblink {
 .testimionals-bg {
 	width: 100%;
 	height: auto;
-	background: url(http://marinamarques.pt/img/mm_testimionals.jpg) no-repeat top center scroll;
+	background: url(https://scontent-sin2-2.xx.fbcdn.net/v/t1.0-9/57227788_2789009824472733_7468396787087179776_n.jpg?_nc_cat=107&_nc_ht=scontent-sin2-2.xx&oh=0734459bffdc66e2718767cc0f5d7403&oe=5D4570C9) no-repeat top center scroll;
 	background-size: cover;
 	-o-background-size: cover;
 }
 
 .testimionals-bg-opacity {
-	width: 100%;
-	height: auto;
-	background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .quotes {
