@@ -1,2 +1,2 @@
-// alert("tested");
-// console.log("tested");
+alert("tested");
+console.log("tested");
