@@ -159,16 +159,22 @@ $arr = [10,"data 2","data 3"];
     var nama = "Ari Bahtiar";
     // console.log(nama);
     document.getElementById("demo").innerHTML = nama;
-
 // 2. data type,
+    var int = 1;
+    let boolean = true;
+    let string = "string";
 // 3. operator, 
+    // + - * /
 // 4. condition, 
+    // if 
 // 5. looping, 
+    // 
 // 6. array, 
 // 7. object, 
 // 8. function, 
 // 9. sorting
 // 10. searching
+
 </script>
 
 </body>
