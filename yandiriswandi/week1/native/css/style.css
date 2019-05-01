@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    position: fixed;
+    top:0;
+    width: 100%;
+    box-shadow: 2px 2px 1px #ccc;
+}
+.bg-biru{
+    background: blue
+}
+a {
+    padding: 12px 16px;
+    text-decoration: none;
+    float: left;
+    background: #fff
+}
+a img{
+    height:30px
+}
+.nav-link:hover {
+   background: lightseagreen;
+   color: #fff
+}
+section{
+    margin-top: 100px; 
+}
+=======
   font-family: "Lato", sans-serif;
 }
 
@@ -130,3 +162,4 @@ img {vertical-align: middle;}
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
+>>>>>>> cfa40c790e392154143c3965569803852b388e60
