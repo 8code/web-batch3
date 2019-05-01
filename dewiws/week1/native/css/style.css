@@ -1,3 +1,20 @@
 *{
-    background: darkturquoise;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 2px 2px 1px white;
+    
+}
+
+a{
+    padding: 12px 16px;
+    /* atas bawah / kiri kanan */
+    
+
 }

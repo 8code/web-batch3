@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+alert("tested");
+console.log("tested");
+=======
 // alert("tested");
 
 // Pembuatan variable
@@ -29,3 +33,4 @@
 
 
 
+>>>>>>> 8a9046c5fe37e33f3162dae9c7955d5d977c4a78
