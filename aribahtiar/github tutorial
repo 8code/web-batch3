@@ -1,0 +1,10 @@
+1. untuk inisialisasi bikin repository baru di github
+2. git clone untuk mengcopy ke local
+    - git clone https://github.com/aribahtiarpro/web-batch3.git
+3. setelah itu masuk ke folder nama repositorinya di cmd/terminal
+4. untuk mengupload data
+    - git add .
+    - git commit -m "ini komentar"
+    - git push origin master
+5. untuk mendownload
+    - git pull origin master
