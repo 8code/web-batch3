@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/artikel', 'ArtikelController@index')->name('artikel');
+Route::post('/artikel', 'ArtikelController@tambah')->name('tambah_artikel');
 
 Route::get('/komentar', 'KomentarController@index')->name('komentar');
 

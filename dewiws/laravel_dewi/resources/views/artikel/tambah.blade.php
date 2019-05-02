@@ -1,31 +1,45 @@
-{{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Open modal for @fat</button> --}}
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Tambah Artikel</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Artikel</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form method="POST" action="{{url("/artikel")}}">
+          @csrf
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label>Judul</label>
+            <input type="text" class="form-control" name="judul" placeholder="Judul Artikel">
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label>Kategori</label>
+            <input type="text" class="form-control" name="kategori" placeholder="Kategori">
           </div>
+          <div class="form-group">
+                <label>Image</label>
+                <input class="form-control" type="file" name="image">
+            </div>
+            <div class="form-group">
+                <label>Video</label>
+                <input class="form-control" type="text" name="video" placeholder="Video Link">
+            </div>
+            <div class="form-group">
+                <label>Isi Konten</label>
+                <textarea name="isi" class="form-control">
+                </textarea>
+            </div>
+            {{-- Form --}}
+            <button type="submit" class="btn btn-primary">Tambahkan Artikel</button>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+        
       </div>
     </div>
   </div>
