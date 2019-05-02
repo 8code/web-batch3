@@ -25,18 +25,22 @@
                             <td> 
                                 {{-- button edit --}}
                                 <button class="btn btn-primary btn-sm" onclick = "editartikel({{$artikel}})">Edit</button>
-                                {{-- javascript edit               --}}
-                                    <script>
-                                        function editartikel(artikel){
-                                            $("#modal-editartikel").modal("show");
-                                        }
-                                    </script>
-
+                               
                                 {{-- button delete --}}
                                 <button class="btn btn-danger btn-sm" onclick = "deleteartikel({{$artikel}})">Delete</button>
-                                {{-- javascript delete --}}
+
+                                {{-- javascript --}}
                                     <script>
+                                        function editartikel(artikel){
+                                            $("#edit-id").val(artikel.id)
+                                            $("#edit-judul").val(artikel.judul)
+                                            $("#edit-kategori").val(artikel.kategori)
+                                            $("#edit-isi").val(artikel.isi)
+
+                                            $("#modal-editartikel").modal("show");
+                                        }
                                         function deleteartikel(artikel){
+                                            $("#delete-id").val(artikel.id)
                                             $("#modal-deleteartikel").modal("show");
                                         }
                                     </script>

@@ -8,27 +8,31 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{{url("/artikel")}}">
+        <form method="POST" action="{{route("edit_artikel")}}">
+        
+        {{-- // tambahkan ID --}}
+        <input type="hidden" name="id" id="edit-id">
+
           @csrf
           <div class="form-group">
             <label>Judul</label>
-            <input type="text" class="form-control" name="judul" placeholder="Judul Artikel">
+            <input id="edit-judul" type="text" class="form-control" name="judul" placeholder="Judul Artikel">
           </div>
           <div class="form-group">
             <label>Kategori</label>
-            <input type="text" class="form-control" name="kategori" placeholder="Kategori">
+            <input id="edit-kategori" type="text" class="form-control" name="kategori" placeholder="Kategori">
           </div>
           <div class="form-group">
                 <label>Image</label>
-                <input class="form-control" type="file" name="image">
+                <input id="edit-image" class="form-control" type="file" name="image">
             </div>
             <div class="form-group">
                 <label>Video</label>
-                <input class="form-control" type="text" name="video" placeholder="Video Link">
+                <input id="edit-video" class="form-control" type="text" name="video" placeholder="Video Link">
             </div>
             <div class="form-group">
                 <label>Isi Konten</label>
-                <textarea name="isi" class="form-control">
+                <textarea id="edit-isi" name="isi" class="form-control">
                 </textarea>
             </div>
             {{-- Form --}}
