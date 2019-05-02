@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Hi Ihsan Pratama
+                    Hi Dewi Wulan Sari
                 </div>
 
                 <div class="links">
