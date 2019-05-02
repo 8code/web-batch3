@@ -20,7 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/artikel', 'ArtikelController@index')->name('artikel');
 Route::post('/artikel', 'ArtikelController@tambah')->name('tambah_artikel');
-
+Route::post('/artikel/edit/', 'ArtikelController@edit')->name('edit-artikel');
+Route::post('/artikel/delete/', 'ArtikelController@delete')->name('delete-id');
 
 
 Route::get('/komentar', 'komentarController@index')->name('komentar');
