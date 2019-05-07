@@ -15,13 +15,13 @@
                         <tr>
                             <th>Judul</th>
                             <th>Kategori</th>
-                            <th>Action</th>
+                            <th class="text-right">Action</th>
                         </tr>
                         @foreach ($dataartikel as $artikel)
                         <tr>
                             <td> {{ $artikel->judul }}</td>
                             <td> {{ $artikel->kategori }}</td>
-                            <td> 
+                            <td class="text-right"> 
                                 <button 
                                     class="btn btn-primary btn-sm"
                                     onclick="editartikel({{ $artikel }})"
