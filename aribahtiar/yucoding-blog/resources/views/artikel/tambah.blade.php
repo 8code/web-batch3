@@ -16,19 +16,26 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{{ url("/artikel") }}">
+        <form method="POST" action="{{ url("/artikel") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label>Judul</label>
-                <input class="form-control" type="text" name="judul" placeholder="Judul Artikel">
+                <input class="form-control" type="text" name="judul" placeholder="Judul Artikel" required>
             </div>
             <div class="form-group">
                 <label>Kategori</label>
-                <input class="form-control" type="text" name="kategori" placeholder="Kategori">
+                <input class="form-control" type="text" name="kategori" placeholder="Kategori" required>
             </div>
             <div class="form-group">
                 <label>Image</label>
-                <input class="form-control" type="file" name="image">
+                <input id="uploadimage" class="form-control" type="file" name="image" required>
+                <img id="imagepreview" src="" width="100px">
+                <script>
+                    $("#uploadimage").change(function(){
+                        // alert("test")
+                        $("#imagepreview").attr("src",$(this).val())
+                    })
+                </script>
             </div>
             <div class="form-group">
                 <label>Video</label>
@@ -36,7 +43,7 @@
             </div>
             <div class="form-group">
                 <label>Isi Konten</label>
-                <textarea name="isi" class="form-control">
+                <textarea name="isi" class="form-control" required>
                 </textarea>
             </div>
 
@@ -46,9 +53,6 @@
 
             {{-- Form --}}
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
