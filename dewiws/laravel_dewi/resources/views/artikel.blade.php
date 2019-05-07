@@ -12,16 +12,30 @@
                     @include('artikel.delete')
 
                 <div class="card-body">
+                    
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                 @foreach ($errors->all() as $error)
+                                     <li>{{ $error }}</li>
+                                 @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <table class="table">
                         <tr>
                             <th>Judul</th>
                             <th>Kategori</th>
+                            <th>Image</th>
                             <th>Action</th>
+
                         </tr>
                         @foreach ($dataartikel as $artikel)
                         <tr>
                             <td> {{ $artikel->judul }} </td>
                             <td> {{ $artikel->kategori }} </td>
+                            <td> {{ $artikel->img }} </td>
                             <td> 
                                 {{-- button edit --}}
                                 <button class="btn btn-primary btn-sm" onclick = "editartikel({{$artikel}})">Edit</button>
