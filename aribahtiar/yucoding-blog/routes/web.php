@@ -26,6 +26,4 @@ Route::post('/artikel/edit/', 'ArtikelController@edit')->name('edit-artikel');
 Route::post('/artikel/delete/', 'ArtikelController@delete')->name('delete-artikel');
 
 
-
-
 Route::get('/komentar', 'KomentarController@index')->name('komentar');
