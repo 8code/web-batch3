@@ -21,7 +21,6 @@
                         </div>
                     @endif
 
-                    
                     <table class="table">
                         <tr>
                             <th>Judul</th>

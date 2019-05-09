@@ -25,6 +25,8 @@ class ArtikelController extends Controller
     // Tambah Artikel
     public function tambah(Request $req){
 
+        // enctype="multipart/form-data"
+        
         $this->validate($req, [
             'judul' => 'required',
             'isi' => 'required',
