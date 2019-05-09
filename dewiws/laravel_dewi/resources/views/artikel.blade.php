@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Artikel</div>
                 
@@ -25,18 +25,21 @@
 
                     <table class="table">
                         <tr>
+                            <th>Image</th>
                             <th>Judul</th>
                             <th>Kategori</th>
-                            <th>Image</th>
                             <th>Action</th>
 
                         </tr>
                         @foreach ($dataartikel as $artikel)
                         <tr>
+                            <td> 
+                                <img src="/img/{{ $artikel->img }}" width="50px">
+                            </td>
                             <td> {{ $artikel->judul }} </td>
                             <td> {{ $artikel->kategori }} </td>
-                            <td> {{ $artikel->img }} </td>
-                            <td> 
+                            
+                            <td class="text-right"> 
                                 {{-- button edit --}}
                                 <button class="btn btn-primary btn-sm" onclick = "editartikel({{$artikel}})">Edit</button>
                                
@@ -62,6 +65,8 @@
                         </tr>
                         @endforeach
                     </table>
+
+                    {{$dataartikel->links()}}
 
 
 
