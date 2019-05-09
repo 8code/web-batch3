@@ -18,7 +18,7 @@
           <span>Dashboard</span></a>
       </li>
 
-      <!-- Nav Item - Artikel -->
+      {{-- <!-- Nav Item - Artikel -->
       <li class="nav-item active">
         <a class="nav-link" href="/artikel">
           <i class="fas fa-fw fa-edit"></i>
@@ -30,7 +30,7 @@
         <a class="nav-link" href="/komentar">
           <i class="fas fa-fw fa-edit"></i>
           <span>Komentar</span></a>
-      </li>
+      </li> --}}
 
       <!-- Divider -->
       <hr class="sidebar-divider">
