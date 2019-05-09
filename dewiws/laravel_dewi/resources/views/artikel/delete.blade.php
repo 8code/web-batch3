@@ -13,7 +13,7 @@
           {{-- tambahkan id --}}
             <input type="hidden" name="id" id="delete-id">
             <label class="w-100">Apakah yakin akan menghapus artikel?</label>
-            <button type="submit" class="btn btn-primary">OK</button>
+            <button type="submit" class="btn btn-danger">OK</button>
         </form>
 
 

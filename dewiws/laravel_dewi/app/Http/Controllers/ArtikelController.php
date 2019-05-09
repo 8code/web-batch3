@@ -11,7 +11,7 @@ class ArtikelController extends Controller
 {
     public function index(){
         if(Auth::user()){
-            $dataartikel = artikel::all();
+            $dataartikel = artikel::paginate(3);
              return view("artikel", compact("dataartikel"));
         }else{
             return redirect('login');
@@ -22,6 +22,22 @@ class ArtikelController extends Controller
     // tambah artikel
     public function tambah(Request $req){
 
+        $this->validate($req, [
+            'judul'=>'required',
+            'isi'=>'required',
+            'kategori'=>'required',
+            'image'=>'required|image:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if($req->file('image')){
+            $image = $req->file('image'); //mengambil file image yang diupload
+            $imagename = time().'.'.$image->getClientOriginalExtension(); //ubah naa file dg fungsi time
+            $destinationPath=public_path('/img'); //set folder penyimpanan file dg nama folder 'img'
+            $image->move($destinationPath,$imagename);
+        }else{
+            $imagename = "sample.png";
+        }
+
         $slug = Str::slug($req["judul"],'-');
 
         $artikel = new artikel;
@@ -31,7 +47,7 @@ class ArtikelController extends Controller
         $artikel->video = $req['video'];
         $artikel->user_id = Auth::user()->id;
         $artikel->slug = $slug;
-        $artikel->img = "sample.jpg";
+        $artikel->img = $imagename;
 
         
         $artikel->save();
@@ -40,10 +56,29 @@ class ArtikelController extends Controller
 
     // edit artikel
     public function edit(Request $req){
+        $this->validate($req, [
+            'judul'=>'required',
+            'isi'=>'required',
+            'kategori'=>'required',
+        ]);
+        
+        $artikel = artikel::find($req['id']); 
+
+        if($req->file('image')){
+            $this->validate($req, [
+                'image'=>'required|image:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+            $image = $req->file('image'); //mengambil file image yang diupload
+            $imagename = time().'.'.$image->getClientOriginalExtension(); //ubah naa file dg fungsi time
+            $destinationPath=public_path('/img'); //set folder penyimpanan file dg nama folder 'img'
+            $image->move($destinationPath,$imagename);
+            //di set jika ada request image
+            $artikel->img = $imagename;
+        }
 
         $slug = Str::slug($req["judul"],'-');
 
-        $artikel = artikel::find($req['id']);
+        
 
         $artikel->judul = $req['judul'];
         $artikel->isi = $req['isi'];
@@ -51,8 +86,7 @@ class ArtikelController extends Controller
         $artikel->video = $req['video'];
         $artikel->user_id = Auth::user()->id;
         $artikel->slug = $slug;
-        $artikel->img = "sample.jpg";
-
+        
         
         $artikel->save();
         return redirect('artikel');

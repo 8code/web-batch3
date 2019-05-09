@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Artikel</div>
                 
@@ -12,17 +12,34 @@
                     @include('artikel.delete')
 
                 <div class="card-body">
+                    
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                 @foreach ($errors->all() as $error)
+                                     <li>{{ $error }}</li>
+                                 @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <table class="table">
                         <tr>
+                            <th>Image</th>
                             <th>Judul</th>
                             <th>Kategori</th>
                             <th>Action</th>
+
                         </tr>
                         @foreach ($dataartikel as $artikel)
                         <tr>
+                            <td> 
+                                <img src="/img/{{ $artikel->img }}" width="50px">
+                            </td>
                             <td> {{ $artikel->judul }} </td>
                             <td> {{ $artikel->kategori }} </td>
-                            <td> 
+                            
+                            <td class="text-left"> 
                                 {{-- button edit --}}
                                 <button class="btn btn-primary btn-sm" onclick = "editartikel({{$artikel}})">Edit</button>
                                
@@ -32,6 +49,9 @@
                                 {{-- javascript --}}
                                     <script>
                                         function editartikel(artikel){
+                                            $("#imgedit").html(`
+                                             <img src="/img/${artikel.img}" width="100px">
+                                             `)
                                             $("#edit-id").val(artikel.id)
                                             $("#edit-judul").val(artikel.judul)
                                             $("#edit-kategori").val(artikel.kategori)
@@ -48,6 +68,8 @@
                         </tr>
                         @endforeach
                     </table>
+
+                    {{$dataartikel->links()}}
 
 
 

@@ -8,7 +8,13 @@
         </button>
       </div>
       <div class="modal-body">
+<<<<<<< HEAD
         <form method="POST" action="{{ route("edit-artikel")}}">
+=======
+        <form method="POST" action="{{ route("edit-artikel") }}" enctype="multipart/form-data">
+            {{-- Tambahkan ID --}}
+            <input type="hidden" name="id" id="edit-id">
+>>>>>>> b31d277a0a89b3fd082bfdbb027b9383f68f5ed9
 
           <input type="hidden" name="id" id="edit-id">
             @csrf
@@ -22,7 +28,12 @@
             </div>
             <div class="form-group">
                 <label>Image</label>
+<<<<<<< HEAD
                 <input id="edit-image" class="form-control" type="file" name="img">
+=======
+                <input id="edit-image" class="form-control" type="file" name="image">
+                <div id="imgedit"></div>
+>>>>>>> b31d277a0a89b3fd082bfdbb027b9383f68f5ed9
             </div>
             <div class="form-group">
                 <label>Video</label>
