@@ -1,12 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Artikel</div>
-                @include('artikel.tambah')
                 @include('artikel.edit')
                 @include('artikel.delete')
                 <div class="card-body">
