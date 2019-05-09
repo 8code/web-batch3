@@ -11,7 +11,7 @@ class ArtikelController extends Controller
 {
     public function index(){
         if(Auth::user()){
-            $dataartikel = artikel::all();
+            $dataartikel = artikel::paginate(3);
              return view("artikel", compact("dataartikel"));
         }else{
             return redirect('login');
