@@ -22,12 +22,16 @@
 
                     <table class="table">
                         <tr>
+                            <th>#</th>
                             <th>Judul</th>
                             <th>Kategori</th>
                             <th class="text-right">Action</th>
                         </tr>
                         @foreach ($dataartikel as $artikel)
                         <tr>
+                            <td> 
+                                <img src="/img/{{ $artikel->img }}" width="50px">    
+                            </td>
                             <td> {{ $artikel->judul }}</td>
                             <td> {{ $artikel->kategori }}</td>
                             <td class="text-right"> 
@@ -46,6 +50,10 @@
 
                                 <script>
                                     function editartikel(artikel){
+
+                                        $("#imgedit").html(`
+                                            <img src="/img/${artikel.img}" width="150px">
+                                        `)
 
                                         $("#edit-id").val(artikel.id)
                                         $("#edit-judul").val(artikel.judul)
@@ -69,8 +77,7 @@
                         @endforeach
                     </table>
 
-
-
+                    {{ $dataartikel->links() }}
                 </div>
             </div>
         </div>

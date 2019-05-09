@@ -13,7 +13,7 @@ class ArtikelController extends Controller
         if(Auth::user()){
 
 
-            $dataartikel = artikel::all();
+            $dataartikel = artikel::paginate(7);
             return view("artikel", compact("dataartikel"));
 
             
@@ -64,10 +64,33 @@ class ArtikelController extends Controller
      // Edit Artikel
     public function edit(Request $req){
 
-        $slug = Str::slug($req["judul"], '-');
+        $this->validate($req, [
+            'judul' => 'required',
+            'isi' => 'required',
+            'kategori' => 'required',
+        ]);
 
+        
         // $artikel = new artikel; dirubah
         $artikel = artikel::find($req['id']);
+
+        if($req->file('image')){
+
+            $this->validate($req, [
+                'image' => 'required|image:jpeg,png,jpg,gif,svg|max:2048',
+            ]);
+
+            $image = $req->file('image'); // Mengambil File Image
+            $imagename = time().'.'.$image->getClientOriginalExtension(); // Ubah Nama
+            $destinationPath = public_path('/img'); // Set Folder Penyimpanan File
+            $image->move($destinationPath, $imagename); //
+            // Di set jika ada request image
+            $artikel->img = $imagename;
+        }
+
+
+        $slug = Str::slug($req["judul"], '-');
+
 
         $artikel->judul = $req["judul"];
         $artikel->isi = $req['isi'];
@@ -75,7 +98,6 @@ class ArtikelController extends Controller
         $artikel->video = $req['video'];
         $artikel->user_id = Auth::user()->id;
         $artikel->slug = $slug;
-        $artikel->img = "sample.jpg";
 
         $artikel->save();
 

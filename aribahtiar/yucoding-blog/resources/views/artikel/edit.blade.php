@@ -10,8 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{{ route("edit-artikel") }}">
-
+        <form method="POST" action="{{ route("edit-artikel") }}" enctype="multipart/form-data">
             {{-- Tambahkan ID --}}
             <input type="hidden" name="id" id="edit-id">
 
@@ -27,6 +26,7 @@
             <div class="form-group">
                 <label>Image</label>
                 <input id="edit-image" class="form-control" type="file" name="image">
+                <div id="imgedit"></div>
             </div>
             <div class="form-group">
                 <label>Video</label>
