@@ -22,6 +22,22 @@ class ArtikelController extends Controller
     // tambah artikel
     public function tambah(Request $req){
 
+        $this->validate($req, [
+            'judul'=>'required',
+            'isi'=>'required',
+            'kategori'=>'required',
+            'image'=>'required|image:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if($req->file('image')){
+            $image = $req->file('image'); //mengambil file image yang diupload
+            $imagename = time().'.'.$image->getClientOriginalExtension(); //ubah naa file dg fungsi time
+            $destinationPath=public_path('/img'); //set folder penyimpanan file dg nama folder 'img'
+            $image->move($destinationPath,$imagename);
+        }else{
+            $imagename = "sample.png";
+        }
+
         $slug = Str::slug($req["judul"],'-');
 
         $artikel = new artikel;
@@ -31,7 +47,7 @@ class ArtikelController extends Controller
         $artikel->video = $req['video'];
         $artikel->user_id = Auth::user()->id;
         $artikel->slug = $slug;
-        $artikel->img = "sample.jpg";
+        $artikel->img = $imagename;
 
         
         $artikel->save();

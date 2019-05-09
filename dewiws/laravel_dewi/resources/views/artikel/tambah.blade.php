@@ -10,19 +10,23 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{{url("/artikel")}}">
+        <form method="POST" action="{{url("/artikel")}}" enctype="multipart/form-data">
+          {{-- kalo mau input file pake enctype --}}
           @csrf
           <div class="form-group">
             <label>Judul</label>
-            <input type="text" class="form-control" name="judul" placeholder="Judul Artikel">
+            <input type="text" class="form-control" name="judul" placeholder="Judul Artikel" required>
           </div>
           <div class="form-group">
             <label>Kategori</label>
-            <input type="text" class="form-control" name="kategori" placeholder="Kategori">
+            <input type="text" class="form-control" name="kategori" placeholder="Kategori" required>
           </div>
           <div class="form-group">
                 <label>Image</label>
-                <input class="form-control" type="file" name="image">
+                <input id="uploadimage" class="form-control" type="file" name="image" required>
+                <script>
+                  
+                </script>
             </div>
             <div class="form-group">
                 <label>Video</label>
@@ -30,11 +34,11 @@
             </div>
             <div class="form-group">
                 <label>Isi Konten</label>
-                <textarea name="isi" class="form-control">
+                <textarea name="isi" class="form-control" required>
                 </textarea>
             </div>
             {{-- Form --}}
-            <button type="submit" class="btn btn-primary">Tambahkan Artikel</button>
+            <button type="submit" class="btn btn-primary">Tambahkan</button>
         </form>
       </div>
       <div class="modal-footer">
