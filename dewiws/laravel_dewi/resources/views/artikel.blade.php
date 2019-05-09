@@ -39,7 +39,7 @@
                             <td> {{ $artikel->judul }} </td>
                             <td> {{ $artikel->kategori }} </td>
                             
-                            <td class="text-right"> 
+                            <td class="text-left"> 
                                 {{-- button edit --}}
                                 <button class="btn btn-primary btn-sm" onclick = "editartikel({{$artikel}})">Edit</button>
                                
@@ -49,6 +49,9 @@
                                 {{-- javascript --}}
                                     <script>
                                         function editartikel(artikel){
+                                            $("#imgedit").html(`
+                                             <img src="/img/${artikel.img}" width="100px">
+                                             `)
                                             $("#edit-id").val(artikel.id)
                                             $("#edit-judul").val(artikel.judul)
                                             $("#edit-kategori").val(artikel.kategori)
