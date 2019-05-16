@@ -12,7 +12,27 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
+});
+
+Route::get('/blog', function () {
+    return view('frontend.blog');
+});
+
+Route::get('/about', function () {
+    return view('frontend.about');
+});
+
+Route::get('/contact', function () {
+    return view('frontend.contact');
+});
+
+Route::get('/services', function () {
+    return view('frontend.services');
+});
+
+Route::get('/portfolio', function () {
+    return view('frontend.portfolio');
 });
 
 Auth::routes();
