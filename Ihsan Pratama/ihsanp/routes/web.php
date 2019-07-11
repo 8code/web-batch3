@@ -12,16 +12,36 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
+Route::get('/blog', function () {
+    return view('frontend.blog');
+});
+
+Route::get('/', function () {
+    return view('frontend.index');
+});
+
+
 Auth::routes();
-//artikel
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/artikel', 'ArtikelController@index')->name('artikel');
-Route::post('/artikel', 'ArtikelController@tambah')->name('tambah_artikel');
-Route::post('/artikel/edit/', 'ArtikelController@edit')->name('edit-artikel');
-Route::post('/artikel/delete/', 'ArtikelController@delete')->name('delete-id');
 
 
-Route::get('/komentar', 'komentarController@index')->name('komentar');
+Route::middleware(['auth'])->group(function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/artikel', 'ArtikelController@index')->name('artikel');
+    Route::post('/artikel', 'ArtikelController@tambah')->name('tambah_artikel');
+    Route::post('/artikel/edit', 'ArtikelController@edit')->name('edit-artikel');
+    Route::post('/artikel/delete', 'ArtikelController@delete')->name('delete-artikel');
+    
+    Route::get('/komentar', 'KomentarController@index')->name('komentar');
+
+
+
+    include "group/komentar.php";
+});
+
+Route::get("/{slug}","ArtikelController@singleArtikel");
+
+

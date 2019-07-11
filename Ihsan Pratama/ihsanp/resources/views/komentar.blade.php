@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    kamu di komentar
+                   Ini Halaman Komentar!
                 </div>
             </div>
         </div>
