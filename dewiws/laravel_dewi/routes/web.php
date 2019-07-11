@@ -37,13 +37,19 @@ Route::get('/portfolio', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function(){
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/artikel', 'ArtikelController@index')->name('artikel');
+    
+    Route::post('/artikel', 'ArtikelController@tambah')->name('tambah_artikel');
+    Route::post('/artikel/edit', 'ArtikelController@edit')->name('edit_artikel');
+    Route::post('/artikel/delete', 'ArtikelController@delete')->name('delete_artikel');
 
-Route::get('/artikel', 'ArtikelController@index')->name('artikel');
-Route::post('/artikel', 'ArtikelController@tambah')->name('tambah_artikel');
-Route::post('/artikel/edit', 'ArtikelController@edit')->name('edit_artikel');
-Route::post('/artikel/delete', 'ArtikelController@delete')->name('delete_artikel');
+    Route::get('/komentar', 'KomentarController@index')->name('komentar');
 
-Route::get('/komentar', 'KomentarController@index')->name('komentar');
+    include "group/komentar.php";
+});
 
 
+
+Route::get("/{slug}","ArtikelController@singleArtikel");

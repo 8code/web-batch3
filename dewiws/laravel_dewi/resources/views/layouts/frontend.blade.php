@@ -71,9 +71,11 @@
 	<script src="/frontend/js/jquery.ajaxchimp.min.js"></script>
 	<script src="/frontend/js/mail-script.js"></script>
 	<!--gmaps Js-->
-	<script src="/frontend/https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="/frontend/js/gmaps.min.js"></script>
 	<script src="/frontend/js/theme.js"></script>
+	
+	@yield("js-after")
 </body>
 
 </html>
