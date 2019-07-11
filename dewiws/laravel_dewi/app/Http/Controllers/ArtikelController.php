@@ -95,9 +95,17 @@ class ArtikelController extends Controller
     // delete artikel
     public function delete(Request $req){
         
+        
         $artikel = artikel::find($req['id']);
        
         $artikel->delete();
         return redirect('artikel');
+    }
+
+    // single page artikel
+    public function singleArtikel($slug){
+        $artikel = artikel::where("slug",$slug)->first();
+
+        return view("frontend.single-blog",compact("artikel"));
     }
 }

@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="categories_post">
-                        <img src="img/blog/cat-post/cat-post-3.jpg" alt="post">
+                        <img src="/frontend/img/blog/cat-post/cat-post-3.jpg" alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
                                 <a href="single-blog.html"><h5>Social Life</h5></a>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="categories_post">
-                        <img src="img/blog/cat-post/cat-post-2.jpg" alt="post">
+                        <img src="/frontend/img/blog/cat-post/cat-post-2.jpg" alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
                                 <a href="single-blog.html"><h5>Politics</h5></a>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="categories_post">
-                        <img src="img/blog/cat-post/cat-post-1.jpg" alt="post">
+                        <img src="/frontend/img/blog/cat-post/cat-post-1.jpg" alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
                                 <a href="single-blog.html"><h5>Food</h5></a>
@@ -105,7 +105,7 @@
                                     </div>
 
                                         <p>{{$item->isi}}</p>
-                                        <a href="single-blog.html" class="primary_btn"><span>View More</span></a>
+                                        <a href="{{$item->slug}}" class="primary_btn"><span>View More</span></a>
                                     </div>
                                 </div>
                             </div>
