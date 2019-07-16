@@ -94,6 +94,49 @@
     
                             @section('js-after')
                                 <script>
+                                    function getKomentar(id){
+                                        $.get("/komentars/"+id)
+                                        .done(function(res){
+                                            console.log(res)
+                                            let komen = "";
+                                                for (let index = 0; index < res.length; index++) {
+                                                    
+                                                    if(res[index].induk == 0 || res[index].induk == null){
+
+                                                    
+                                                        komen += `<div class="comment-list" id="komen-${res[index].id}">
+                                                            <div class="single-comment justify-content-between d-flex">
+                                                                <div class="user justify-content-between d-flex">
+                                                                    <div class="thumb">
+                                                                        <img src="/frontend/img/blog/c1.jpg" alt="">
+                                                                    </div>
+                                                                    <div class="desc">
+                                                                        <h5><a href="#">${res[index].name}</a></h5>
+                                                                        <p class="date">${res[index].created_at}</p>
+                                                                        <p class="comment">
+                                                                            ${res[index].komentar}
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="reply-btn">
+                                                                        <a onclick="reply(${res[index].id})" href="#form-komentar" class="btn-reply text-uppercase">reply</a> 
+                                                                </div>
+                                                            </div>
+                                                        </div>`;
+                                                    }
+                                        }
+
+
+
+
+
+
+                                                                //push komen
+                                            $("#komentar-list").append(komen);
+                                        })
+                                    }
+                                    
+                                    getKomentar($("#artikel-id").val())
                                     $("#btn-simpan").click(function(){
                                         let artikelId = $("#artikel-id").val();
                                         let indukId = $("#induk-id").val() || 0;

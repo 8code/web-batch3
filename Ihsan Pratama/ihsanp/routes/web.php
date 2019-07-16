@@ -39,8 +39,10 @@ Route::middleware(['auth'])->group(function() {
 
 
 
-    include "group/komentar.php";
+    
 });
+
+include "group/komentar.php";
 
 Route::get("/{slug}","ArtikelController@singleArtikel");
 

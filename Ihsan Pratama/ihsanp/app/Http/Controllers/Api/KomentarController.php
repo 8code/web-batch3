@@ -10,8 +10,15 @@ class KomentarController extends Controller
 
 {
     //
-    public function GetKomentar($artikelid){
-    }
+    public function getKomentars($id){
+        // return $id;
+    $komentar = komentar::where("artikel_id",$id)
+                ->join("users","users.id","komentars.user_id")
+                ->select ("komentars.*","users.name")
+                ->get();
+    return $komentar;
+}
+    
 
 
 
